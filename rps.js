@@ -1,12 +1,13 @@
 const choices = ["rock","paper","scissors"];
-let score = 0;
+let compChoice;
 
 function computerPlay() {
     // generate random index
     let min = 0;
     let max = choices.length;
     let index = Math.floor(Math.random() * (max - min) + min);
-    return choices[index];
+    compChoice = choices[index];
+    return compChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -15,7 +16,7 @@ function playRound(playerSelection, computerSelection) {
     switch (true) {
         case (playerSelection.toLowerCase() === computerSelection):
             draw = true;
-            break;
+            break;r
         case (playerSelection.toLowerCase() === "rock"):    
             computerSelection === "scissors" ? victory = true : victory = false;
             break;
@@ -26,12 +27,45 @@ function playRound(playerSelection, computerSelection) {
             computerSelection === "paper" ? victory = true : victory = false;
             break;
     }
-    if (draw) return console.log("It was a draw!");
-    if (victory) return console.log("You win!");
-    return console.log("You lose!");
+    if (draw) return null;
+    if (victory) return true;
+    return false;
   }
-  
-var playerSel = "ROCk";
+
+  function game(){
+    let playerScore = 0;
+    let compScore = 0;
+    let roundResult;
+    for (let i=1; i<=5; i++) {
+      var playerChoice = prompt("Pick rock, paper, or scissors!");
+      // currently does not check if user enters a random string
+      computerPlay();
+      roundResult = playRound(playerChoice, compChoice); 
+      // determine round result
+      if (roundResult) {
+            console.log(`Round ${i}: You chose ${playerChoice.toLowerCase()}, computer chose ${compChoice}. You won this round!`);
+            playerScore++;
+      } else if (roundResult === false){
+            console.log(`Round ${i}: You chose ${playerChoice.toLowerCase()}, computer chose ${compChoice}. You lost this round!`);
+            compScore++;
+      } else {
+            console.log(`Round ${i}: You chose ${playerChoice.toLowerCase()}, computer chose ${compChoice}. It's a draw!`);
+      }
+      console.log(`Score: ${playerScore} pts (player) | ${compScore} pts (computer)`);
+    }
+    // determine game result
+    if (playerScore > compScore) {
+        return console.log("You won the game!");
+    } else if (playerScore < compScore) {
+        return console.log("Aww, you lost!");
+    } else {
+        return console.log("Neither wins!");
+    }
+}
+
+game();
+
+/*var playerSel = "ROCk";
 var compSel = computerPlay();
 console.log(`You chose ${playerSel.toLowerCase()}. Computer chose ${compSel}. 
-${playRound(playerSel, compSel)}`);
+${playRound(playerSel, compSel)}`);*/
