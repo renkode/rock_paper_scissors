@@ -1,8 +1,46 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background: linear-gradient(#ffe0e0, #e1e3ff);
+    background: linear-gradient(180deg, #e73c7e,#23a6d5);
+    background-size: 400% 400%;
+    animation: gradient 12s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.center-container {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
+    padding: 6px;
+}
 
 .container {
     width: 100%;
     height: 300px;
-    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,10 +53,13 @@
     width: 100%;
     height: 50px;
     line-height: 25px;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-color: gray;
+    background-color: rgb(255, 255, 255);
     padding: 0px 4px 0px 4px;
+    box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.5);
 }
 
 .player-container {
@@ -27,7 +68,8 @@
     box-sizing: border-box;
     width: 100%;
     flex-grow: 1;
-    background-color: rgb(165, 165, 165);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.5)
 }
 
 .comp-container {
@@ -36,7 +78,8 @@
     box-sizing: border-box;
     width: 100%;
     flex-grow: 1;
-    background-color: rgb(165, 165, 165);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.5)
 }
 
 .info {
@@ -46,18 +89,19 @@
     line-height: 30px;
     display: flex;
     justify-content: space-between;
-    background-color: gray;
+    background-color: rgb(228, 228, 228);
+    box-shadow: 0px 3px 2px rgb(0, 0, 0, 0.3)
 }
 
 .player-label {
-    background-color: rgb(255, 51, 95);
-    width: 30%;
+    background: linear-gradient(90deg, #e73c7e,rgb(0,0,0,0));
+    width: 60%;
     padding-left: 4px;
 }
 
 .comp-label {
-    background-color: rgb(102, 130, 255);
-    width: 30%;
+    background: linear-gradient(90deg, #23a6d5,rgb(0,0,0,0));
+    width: 60%;
     padding-left: 4px;
 }
 
@@ -76,12 +120,40 @@
     margin: 4px 0px 4px 0px;
 }
 
-.weapon {
+.player-weapon {
     width: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-transform: uppercase;
+    background-color: #ff649f;
+    border: none;
+    border-radius: 5px;
+    color: #63082b;
+}
+
+.player-weapon:hover {
+    background-color: #f04578;
+}
+
+.comp-weapon {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: #34bef0;
+    border: none;
+    border-radius: 5px;
+    color: #082f63;
+}
+
+.comp-weapon:hover {
+    background-color: #2492d1;
+}
+
+.active {
+    background-color: #2492d1;
 }
 
 i {
@@ -91,6 +163,12 @@ i {
 @media screen and (min-width: 800px) {
     .container {
         width: 50%;
+        align-content: center;
+        margin: auto;
+    }
+
+    .battle-log {
+        line-height: 50px;
     }
 }
 
