@@ -160,7 +160,7 @@ i {
     font-size: 30px;
 }
 
-@media screen and (min-width: 800px) {
+@media only screen and (min-device-width: 800px) {
     .container {
         width: 500px;
         align-content: center;
