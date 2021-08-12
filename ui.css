@@ -162,7 +162,7 @@ i {
 
 @media screen and (min-width: 800px) {
     .container {
-        width: 50%;
+        width: 500px;
         align-content: center;
         margin: auto;
     }
