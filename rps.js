@@ -1,6 +1,4 @@
 const choices = ["rock","paper","scissors"];
-let compChoice;
-let choice;
 let playerScore = 0;
 let compScore = 0;
 let round = 0;
@@ -10,8 +8,7 @@ function computerPlay() {
     let min = 0;
     let max = choices.length;
     let index = Math.floor(Math.random() * (max - min) + min);
-    compChoice = choices[index];
-    return compChoice;
+    return choices[index];
 }
 
 const log = document.querySelector(".battle-log");
@@ -23,13 +20,15 @@ const compPts = document.querySelector("#comp-points");
 
 weapons.forEach(weapon => {
     weapon.addEventListener('click', function (e) {
-        if (e.target.tagName === "BUTTON") choice = e.target.id;
-        if (e.target.tagName === "I") choice = e.target.parentNode.id;
-        game();
+        let playerChoice;
+        let compChoice = computerPlay();
+        if (e.target.tagName === "BUTTON") playerChoice = e.target.id;
+        if (e.target.tagName === "I") playerChoice = e.target.parentNode.id;
+        playRound(outcome(playerChoice, compChoice), playerChoice, compChoice);
     })
 });
 
-function playRound(playerSelection, computerSelection) {
+function outcome(playerSelection, computerSelection) {
     let victory;
     let draw;
     switch (true) {
@@ -51,19 +50,17 @@ function playRound(playerSelection, computerSelection) {
     return false;
 }
 
-function game() {
-    let roundResult;
-    roundResult = playRound(choice, computerPlay());
-    if (roundResult) {
-        log.textContent = `Round ${round}: ${choice} > ${compChoice}.
+function playRound(result, playerChoice, compChoice) {
+    if (result) {
+        log.textContent = `Round ${round}: ${playerChoice} > ${compChoice}.
         You won this round!`;
         playerScore++;
-  } else if (roundResult === false){
-        log.textContent = `Round ${round}: ${choice} < ${compChoice}.
+  } else if (result === false){
+        log.textContent = `Round ${round}: ${playerChoice} < ${compChoice}.
         You lost this round!`;
         compScore++;
   } else {
-        log.textContent = `Round ${round}: ${choice} = ${compChoice}.
+        log.textContent = `Round ${round}: ${playerChoice} = ${compChoice}.
         It's a draw!`;
   }
   console.log(`Score: ${playerScore} pts (player) | ${compScore} pts (computer)`);
