@@ -78,4 +78,26 @@ function playRound(result, playerChoice, compChoice) {
   round++;
   playerPts.textContent = `${playerScore} pts`;
   compPts.textContent = `${compScore} pts`;
+  if (playerScore >= 5 || compScore >= 5) {
+    determineWinner();
+  }
+}
+
+function determineWinner() {
+    if (playerScore >= 5) log.textContent = `You won the game!`;
+    if (compScore >= 5) log.textContent = `You lost the game!`;
+    let btns = document.querySelectorAll("button");
+    btns.forEach(btn => {
+        btn.disabled = true;
+    })
+    setTimeout(function() { log.textContent = `Starting over...` }, 2500);
+    setTimeout(function() { log.textContent = `Select your weapon!` 
+    btns.forEach(btn => {
+        btn.disabled = false;
+    })
+    playerScore = 0;
+    compScore = 0;
+    round = 0;
+    playerPts.textContent = `${playerScore} pts`;
+    compPts.textContent = `${compScore} pts`;}, 4000);
 }
