@@ -10,6 +10,9 @@ function computerPlay() {
     return compChoice;
 }
 
+const log = document.querySelector(".battle-log");
+log.textContent = "Select your weapon!";
+
 function playRound(playerSelection, computerSelection) {
     let victory;
     let draw;
@@ -62,10 +65,3 @@ function playRound(playerSelection, computerSelection) {
         return console.log("Neither wins!");
     }
 }
-
-game();
-
-/*var playerSel = "ROCk";
-var compSel = computerPlay();
-console.log(`You chose ${playerSel.toLowerCase()}. Computer chose ${compSel}. 
-${playRound(playerSel, compSel)}`);*/
