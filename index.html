@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" href="ui.css">
+        <script src="https://kit.fontawesome.com/e09d9d3a54.js" crossorigin="anonymous"></script>
+    </head>
     <body>
-        <div class="battle-log">
-            abcd
-        </div>
-        <div class="arena">
+        <div class="container">
+            <div class="battle-log">
+                abcd
+            </div>
             <div class="player-container">
-                <div class="player-label">
-                    Player
+                <div class="info">
+                    <div class="player-label">
+                        Player
+                    </div>
+                    <div id="player-points" class="points">
+                        0 pts
+                    </div>
                 </div>
-                <div id="player-points">
-                    0 pts
-                </div>
-                <div class="weapons">
-                    <button id="rock">rock</button>
-                    <button id="paper">paper</button>
-                    <button id="rock">scissors</button>
+                <div id="player-wep" class="weapon-container">
+                    <button id="rock" class="weapon"><i class="fas fa-hand-rock"></i>rock</button>
+                    <button id="paper" class="weapon"><i class="fas fa-hand-paper"></i>paper</button>
+                    <button id="rock" class="weapon"><i class="fas fa-hand-scissors"></i>scissors</button>
                 </div>
             </div>
 
             <div class="comp-container">
-                <div id="comp-points">
-                    0 pts
+                <div class="info">
+                    <div class="comp-label">
+                        Computer
+                    </div>
+                    <div id="comp-points" class="points">
+                        0 pts
+                    </div>
                 </div>
-                <div class="comp-label">
-                    Computer
-                </div>
-                <div class="weapons">
-                    <button id="rock">rock</button>
-                    <button id="paper">paper</button>
-                    <button id="rock">scissors</button>
+                <div id="comp-wep" class="weapon-container">
+                    <button id="rock" class="weapon"><i class="fas fa-hand-rock"></i>rock</button>
+                    <button id="paper" class="weapon"><i class="fas fa-hand-paper"></i>paper</button>
+                    <button id="rock" class="weapon"><i class="fas fa-hand-scissors"></i>scissors</button>
                 </div>
             </div>
         </div>
-
         <script src="rps.js"></script>
     </body>
 </html>

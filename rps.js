@@ -13,6 +13,16 @@ function computerPlay() {
 const log = document.querySelector(".battle-log");
 log.textContent = "Select your weapon!";
 
+const weapons = document.querySelectorAll(".weapon");
+
+function selectWeapon (e) {
+    e.addEventListener('click',console.log(e.id))
+}
+
+weapons.forEach(selectWeapon);
+
+
+
 function playRound(playerSelection, computerSelection) {
     let victory;
     let draw;
