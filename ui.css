@@ -61,6 +61,7 @@ body {
     background-color: rgb(255, 255, 255);
     padding: 4px;
     box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
 
 .player-container {
@@ -70,7 +71,8 @@ body {
     width: 100%;
     flex-grow: 1;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.5)
+    box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
 
 .comp-container {
@@ -80,7 +82,8 @@ body {
     width: 100%;
     flex-grow: 1;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.5)
+    box-shadow: 0px 0px 6px rgb(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
 
 .info {
@@ -92,19 +95,22 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: rgb(228, 228, 228);
-    box-shadow: 0px 3px 2px rgb(0, 0, 0, 0.3)
+    box-shadow: 0px 3px 2px rgb(0, 0, 0, 0.3);
+    border-radius: 5px 5px 0px 0px;
 }
 
 .player-label {
     background: linear-gradient(90deg, #e73c7e,rgb(0,0,0,0));
     width: 60%;
     padding-left: 6px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .comp-label {
     background: linear-gradient(90deg, #23a6d5,rgb(0,0,0,0));
     width: 60%;
     padding-left: 6px;
+    border-radius: 5px 5px 0px 0px;
 }
 
 .points {
