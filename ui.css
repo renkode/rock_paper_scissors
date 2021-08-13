@@ -116,13 +116,14 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    padding: 6px;
+    padding: 3%;
     margin: 4px 0px 4px 0px;
 }
 
 .player-weapon {
     width: 90px;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     justify-content: center;
     text-transform: uppercase;
@@ -139,6 +140,7 @@ body {
 .comp-weapon {
     width: 90px;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     justify-content: center;
     text-transform: uppercase;
@@ -170,6 +172,14 @@ i {
 
     .battle-log {
         line-height: 50px;
+    }
+
+    .weapon-container {
+        padding: 6px;
+    }
+
+    .player-weapon, .comp-weapon {
+        flex-grow: 0;
     }
 }
 
